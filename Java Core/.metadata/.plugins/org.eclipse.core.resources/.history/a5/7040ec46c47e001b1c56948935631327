@@ -1,0 +1,54 @@
+package com.vti.frontend;
+
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.sql.SQLException;
+import java.util.List;
+
+import com.vti.Utils.ScannerUtils;
+import com.vti.backend.presentation.UserController;
+import com.vti.entity.User;
+
+public class Function {
+
+	private UserController userController;
+
+	public Function() throws FileNotFoundException, ClassNotFoundException, IOException, SQLException {
+		userController = new UserController();
+	}
+
+	public void getListManagerOfUsers() throws Exception {
+		List<User> users = userController.getListManagerOfUsers();
+		System.out.printf("%-15s %-25s %-25s %-25s\n", "ID", "Email", "Fullname", "Password");
+		for (User user : users) {
+			System.out.printf("%-15s %-25s %-25s %-25s\n", user.getId(), user.getEmail(), user.getFullName(),
+					"*********");
+		}
+	}
+
+//	public void getUserByProjectId() throws ClassNotFoundException, SQLException {
+//		while (true) {
+//			System.out.print("Mời bạn nhập vào id: ");
+//			int projectId = ScannerUtils.inputPositiveInt("Bạn phải nhập vào số nguyên dương! Mời nhập lại");
+//
+//			if (userController.isUserIdExits(projectId)) {
+//				System.out.println(userController.getUserByProjectId(projectId));
+//				return;
+//			} else {
+//				System.err.println("id khong ton tai! Vui long nhap lai! ");
+//			}
+//		}
+//	}
+
+
+	public void login() throws Exception {
+		System.out.println("Nhap Email:");
+		String email = ScannerUtils.inputString("Nhap lai!");
+		System.out.println("Nhap pass word:");
+		String pass = ScannerUtils.inputString("Nhap lai!");
+		if(userController.isUserExists(email, pass))
+			System.out.println("Đăng nhập thành công!");
+		else
+			System.out.println("Email hoặc password không đúng. Kiểm tra lại!");
+	}
+}

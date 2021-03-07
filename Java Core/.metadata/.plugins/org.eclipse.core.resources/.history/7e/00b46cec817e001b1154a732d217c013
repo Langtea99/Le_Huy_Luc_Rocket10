@@ -1,0 +1,47 @@
+package com.vti.backend.datalayer;
+
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
+
+import com.vti.Utils.JdbcUltils;
+import com.vti.entity.Role;
+import com.vti.entity.User;
+
+public class UserRepository implements IUserRepository {
+
+	private JdbcUltils jdbcUltils;
+	private Connection connection;
+
+	public UserRepository() throws FileNotFoundException, ClassNotFoundException, IOException, SQLException {
+		jdbcUltils = new JdbcUltils();
+	}
+
+	public List<User> getListManagers() throws SQLException, ClassNotFoundException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public User getUserByIdProject(int id) throws SQLException, ClassNotFoundException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public boolean isUserIdExits(int id) throws SQLException, ClassNotFoundException {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	public User login(String email, String password) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	
+}

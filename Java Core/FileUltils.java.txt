@@ -1,0 +1,54 @@
+package shared.day7;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+
+public class FileUltils {
+	
+	public static void main(String[] args) throws IOException {
+		
+		// Create file
+		File file = new File("/Users/admin/Desktop/vti academy/rocket-10/Basic Java/Resource/src/shared");
+		
+		if(file.exists()) {
+			System.out.println("file exist");
+		} else {
+			System.out.println("file not exist");
+			
+			file.createNewFile();
+		}
+		
+		// check path
+		if (file.isDirectory()) {
+			System.out.println("this is folder");
+		} else {
+			System.out.println("this is file");
+		}
+
+		for (File fileTmp : file.listFiles()) {
+			System.out.println("file: " + fileTmp.getName());
+		}
+		
+		FileInputStream fileInputStream = 
+				new FileInputStream("/Users/admin/Desktop/vti academy/rocket-10/Basic Java/Resource/src/shared/test_new.txt");
+		
+		
+		byte[] b = new byte[10];
+		
+		int length = fileInputStream.read(b);
+		
+		
+		while (length > -1) {
+			
+			String content = new String(b, 0, length);
+			System.out.println("count: " + content);
+
+			length = fileInputStream.read(b);
+			
+		}
+		
+		fileInputStream.close();
+	}
+
+}

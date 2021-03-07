@@ -1,0 +1,19 @@
+package com.vti.backend.bussinesslayer;
+
+import java.sql.SQLException;
+import java.util.List;
+
+import com.vti.entity.User;
+
+public interface IUserService {
+
+	List<User> getListManagers();
+
+	User getUserByIdProject(int id);
+
+	boolean isUserIdExits(int id);
+
+	User login(String email, String password);
+
+	
+}

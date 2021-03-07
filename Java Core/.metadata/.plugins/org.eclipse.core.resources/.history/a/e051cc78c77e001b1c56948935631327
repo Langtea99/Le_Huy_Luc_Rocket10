@@ -1,0 +1,54 @@
+package com.vti.frontend;
+
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.sql.SQLException;
+
+import com.vti.Utils.ScannerUtils;
+import com.vti.backend.presentation.UserController;
+import com.vti.entity.Position;
+import com.vti.entity.User;
+
+public class Program {
+	public static void main(String[] args)
+			throws Exception {
+		menuLogin();
+	}
+
+	private static void menuLogin() throws Exception {
+		Function function = new Function();
+		userController = new UserController();
+		
+		int chon;
+		do {
+			System.out.println("\n*******************************************");
+			System.out.println("**             Users system              **");
+			System.out.println("*******************************************");
+			System.out.println("**                                       **");
+			System.out.println("**        1. Đăng nhập                   **");
+			System.out.println("**        2. Đăng ký                     **");
+			System.out.println("**        0. Thoát chương trình          **");
+			System.out.println("**                                       **");
+			System.out.println("*******************************************");
+			System.out.println("**     Nhập lựa chọn của bạn             **");
+			chon = ScannerUtils.inputInt("Vui lòng nhập vào một số. Nhập lại!");
+			switch(chon) {
+			case 1:
+				dangNhap();
+				break;
+			case 2:
+				dangKy();
+				break;
+			case 0:
+				System.out.println("Đã thoát chương trình thành công!");
+				break;
+			default:
+				System.err.println("Không có lựa chọn này. Nhập lại !");
+				break;
+			}
+		} while(chon != 0);
+	}
+	}
+
+	}
+

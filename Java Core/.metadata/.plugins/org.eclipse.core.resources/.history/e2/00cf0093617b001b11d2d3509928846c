@@ -1,0 +1,18 @@
+package com.vti.backend.bussinesslayer;
+
+import java.util.List;
+
+import com.vti.backend.datalayer.DepartmentRepository;
+import com.vti.entity.Department;
+
+public class DepartmentService {
+	DepartmentRepository departmentRepository = new DepartmentRepository();
+	//accountRepository
+	
+		public List<Department> getAllDepartments(){
+			List<Department> listDepartment = departmentRepository.getAllDepartments();
+							
+			
+			return listDepartment;
+		}
+}

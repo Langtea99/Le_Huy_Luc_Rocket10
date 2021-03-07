@@ -1,0 +1,21 @@
+package com.vti.backend;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.Properties;
+
+public class Basic {
+	private Properties properties;
+	private Connection connection;
+
+	public Basic() throws FileNotFoundException, IOException {
+		properties = new Properties();
+
+		properties.load(new FileInputStream(
+				"C:\\Users\\ASUS\\Desktop\\luc.lehuy\\Java Core\\TestingSystem_Assignment_10\\src\\main\\java\\resources\\database.properties"));
+
+		properties.load(new FileInputStream(
+				"C:\\Users\\ASUS\\Desktop\\luc.lehuy\\Java Core\\TestingSystem_Assignment_10\\src\\main\\java\\resources\\message.properties"));
+
+}

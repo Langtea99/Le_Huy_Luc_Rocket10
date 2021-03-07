@@ -1,0 +1,7 @@
+package com.vti.backend.bussinesslayer;
+
+import com.vti.backend.datalayer.DepartmentRepository;
+
+public class DepartmentService {
+	DepartmentRepository departmentRepository = new DepartmentRepository();
+}

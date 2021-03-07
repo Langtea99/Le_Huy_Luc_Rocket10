@@ -1,0 +1,19 @@
+package com.vti.backend.datalayer;
+
+import java.io.IOException;
+import java.sql.SQLException;
+import com.vti.ultis.properties.MessageProperties;
+
+import vti.com.ultis.JdbcUtils;
+
+public class DepartmentRepository {
+	private JdbcUtils jdbcUtils;
+
+	private MessageProperties messagePoperties;
+
+	public CallProcedure() throws ClassNotFoundException, IOException, SQLException {
+		jdbcUtils = new JdbcUtils();
+
+		messagePoperties = new MessageProperties();
+	}
+}

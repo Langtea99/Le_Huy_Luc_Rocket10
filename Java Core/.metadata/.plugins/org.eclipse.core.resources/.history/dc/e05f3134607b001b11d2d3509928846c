@@ -1,0 +1,23 @@
+package com.vti.backend.datalayer;
+
+public class DepartmentRepository {
+JdbcUtils jdbcUtils = new JdbcUtils();
+	
+	public List<Department> getAllDepartments() 
+			throws FileNotFoundException, ClassNotFoundException, IOException, SQLException{
+		List<Department> listDepartment = new ArrayList<Department>();
+		Connection connection = jdbcUtils.connect();
+		Statement statement = connection.createStatement();		
+		String querry = "SELECT * FROM department";		
+		ResultSet resultSet = statement.executeQuery(querry);
+		
+		while(resultSet.next()){			
+			listDepartment.add(new Department(
+					resultSet.getInt("DepartmentID"),
+					resultSet.getString("DepartmentName")
+					));
+		}
+				
+		return listDepartment;
+	}
+}

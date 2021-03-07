@@ -1,0 +1,15 @@
+package com.vti.frontend;
+
+import java.io.IOException;
+
+import com.vti.Utils.JdbcUtils;
+
+public class Program {
+
+	public static void main(String[] args) throws IOException {
+		// TODO Auto-generated method stub
+		JdbcUtils jdbcUtils = new JdbcUtils();
+		jdbcUtils.connectForTesting();
+	}
+
+}
